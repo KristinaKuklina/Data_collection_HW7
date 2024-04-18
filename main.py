@@ -72,12 +72,12 @@ for card in cards:
     data.append({
                 "Название": name,
                 "Описание": description,
-                "Цена за 250 г., ₽": price_per_250g,
-                "Цена за кг, ₽": price_per_kg
+                "Цена за 250 г, руб": price_per_250g,
+                "Цена за кг, руб": price_per_kg
             })
     
 # Запись результатов в файл
-with open('tasty_coffee.csv', 'w', newline='') as f:
+with open('tasty_coffee.csv', 'w', newline='', encoding='utf-8') as f:
     dict_writer = csv.DictWriter(f, data[0].keys())
     dict_writer.writeheader()
     dict_writer.writerows(data)
